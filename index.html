@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faizan Hussain | Professional Portfolio</title>
+    <title>Faizan Hussain | Creative & Financial Portfolio</title>
     
     <!-- SEO & Verification -->
-    <meta name="description" content="Professional portfolio of Faizan Hussain. Discover my projects, skills, and professional experience.">
+    <meta name="description" content="Professional portfolio of Faizan Hussain. Showcasing expertise in Graphic Design, Accounting, and Corporate Finance.">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="gzbr3QNFWMv3Km-BdsQu4q41MB1DWpp8upqv1JdTpc" />
     <link rel="canonical" href="https://mr-faizan-00.github.io/faizan_hussain.github.io/">
@@ -14,22 +14,24 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-primary: #0b0f19;
-            --bg-secondary: #111827;
-            --bg-tertiary: #1f2937;
-            --accent-color: #3b82f6;
-            --accent-glow: rgba(59, 130, 246, 0.15);
-            --text-main: #f3f4f6;
+            --bg-dark: #02040a;
+            --card-bg: rgba(10, 15, 30, 0.7);
+            --accent-blue: #3b82f6; /* Trust/Finance Blue */
+            --accent-purple: #8b5cf6; /* Creative Purple */
+            --accent-pink: #ec4899; /* Design Pink */
+            --accent-green: #10b981; /* Finance Green */
+            --text-main: #f9fafb;
             --text-muted: #9ca3af;
-            --border-color: #374151;
-            --font-family: 'Plus Jakarta Sans', sans-serif;
+            --border-static: rgba(255, 255, 255, 0.06);
+            --font-display: 'Syne', sans-serif;
+            --font-body: 'Space Grotesk', sans-serif;
         }
 
         * {
@@ -40,28 +42,140 @@
         }
 
         body {
-            background-color: var(--bg-primary);
+            background-color: var(--bg-dark);
             color: var(--text-main);
-            font-family: var(--font-family);
+            font-family: var(--font-body);
             line-height: 1.6;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Cyber Grid Overlay with breathing opacity */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 1;
+            animation: gridPulse 8s infinite alternate ease-in-out;
+        }
+
+        @keyframes gridPulse {
+            0% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        /* 
+           LIVING BACKGROUND ORBS
+           These rotate, scale, and shift colors dynamically across Purple, Pink, Blue, Cyan, and Green.
+        */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.35;
+            z-index: 0;
+            mix-blend-mode: screen;
+        }
+
+        .orb-1 {
+            width: 600px;
+            height: 600px;
+            top: 5%;
+            right: -10%;
+            animation: auroraShiftOne 20s infinite alternate ease-in-out;
+        }
+
+        .orb-2 {
+            width: 550px;
+            height: 550px;
+            bottom: 15%;
+            left: -10%;
+            animation: auroraShiftTwo 22s infinite alternate ease-in-out;
+        }
+
+        .orb-3 {
+            width: 450px;
+            height: 450px;
+            top: 45%;
+            left: 30%;
+            animation: auroraShiftThree 25s infinite alternate ease-in-out;
+        }
+
+        /* Orb 1: Shifting through Purple, Magenta, and Deep Blue */
+        @keyframes auroraShiftOne {
+            0% {
+                transform: translate(0, 0) scale(1);
+                background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
+            }
+            33% {
+                transform: translate(80px, 100px) scale(1.1);
+                background: radial-gradient(circle, var(--accent-pink) 0%, transparent 70%);
+            }
+            66% {
+                transform: translate(-50px, 50px) scale(0.9);
+                background: radial-gradient(circle, #4f46e5) 0%, transparent 70%;
+            }
+            100% {
+                transform: translate(0, 0) scale(1);
+                background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
+            }
+        }
+
+        /* Orb 2: Shifting through Electric Blue, Emerald Green, and Cyan */
+        @keyframes auroraShiftTwo {
+            0% {
+                transform: translate(0, 0) scale(1);
+                background: radial-gradient(circle, var(--accent-blue) 0%, transparent 70%);
+            }
+            50% {
+                transform: translate(-100px, -80px) scale(1.15);
+                background: radial-gradient(circle, var(--accent-green) 0%, transparent 70%);
+            }
+            100% {
+                transform: translate(0, 0) scale(1);
+                background: radial-gradient(circle, #06b6d4) 0%, transparent 70%;
+            }
+        }
+
+        /* Orb 3: Shifting through Royal Indigo to Deep Plum */
+        @keyframes auroraShiftThree {
+            0% {
+                transform: translate(0, 0) scale(1);
+                background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+            }
+            50% {
+                transform: translate(120px, -60px) scale(0.85);
+                background: radial-gradient(circle, rgba(236, 72, 153, 0.15) 0%, transparent 70%);
+            }
+            100% {
+                transform: translate(-120px, 60px) scale(1.1);
+                background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            }
         }
 
         /* Navigation */
-        nav {
+        header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(11, 15, 25, 0.8);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
             z-index: 1000;
+            background: rgba(2, 4, 10, 0.7);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid var(--border-static);
             padding: 1.2rem 2rem;
         }
 
         .nav-container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -69,34 +183,47 @@
         }
 
         .logo {
-            font-size: 1.3rem;
+            font-family: var(--font-display);
+            font-size: 1.6rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
-            color: var(--text-main);
             text-decoration: none;
+            color: var(--text-main);
         }
 
         .logo span {
-            color: var(--accent-color);
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.95rem;
             font-weight: 500;
-            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
-        .nav-links a:hover {
-            color: var(--accent-color);
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -6px;
+            left: 0;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-pink));
+            transition: width 0.3s ease;
         }
+
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--text-main); }
 
         /* Hero Section */
         .hero {
@@ -105,437 +232,522 @@
             align-items: center;
             justify-content: center;
             padding: 8rem 2rem 4rem 2rem;
-            background: radial-gradient(circle at 90% 10%, var(--accent-glow) 0%, transparent 40%);
+            position: relative;
+            z-index: 2;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 950px;
             text-align: center;
         }
 
-        .hero-tag {
-            display: inline-block;
-            background-color: var(--accent-glow);
-            color: var(--accent-color);
-            padding: 0.4rem 1rem;
+        /* Animated Pulsing Badge */
+        .badge-interactive {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-static);
+            padding: 0.5rem 1.2rem;
             border-radius: 100px;
             font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            font-weight: 500;
+            margin-bottom: 2rem;
+            animation: borderGlowFlow 4s infinite linear;
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-green);
+            animation: dotBlink 1.5s infinite ease-in-out;
+        }
+
+        @keyframes dotBlink {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes borderGlowFlow {
+            0% { border-color: rgba(59, 130, 246, 0.3); }
+            50% { border-color: rgba(236, 72, 153, 0.4); }
+            100% { border-color: rgba(59, 130, 246, 0.3); }
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6.5vw, 4.5rem);
             font-weight: 800;
-            line-height: 1.1;
+            line-height: 1.15;
+            letter-spacing: -2px;
             margin-bottom: 1.5rem;
-            letter-spacing: -1px;
         }
 
         .hero h1 span {
-            background: linear-gradient(to right, #60a5fa, #3b82f6);
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-pink) 50%, var(--accent-green) 100%);
+            background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: textShine 6s linear infinite;
+        }
+
+        @keyframes textShine {
+            0% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+            100% { background-position: 0% center; }
         }
 
         .hero-desc {
-            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
             color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
         }
 
-        .hero-btns {
+        .hero-actions {
             display: flex;
-            gap: 1rem;
+            gap: 1.2rem;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        .btn {
+        /* Buttons */
+        .btn-elite {
+            position: relative;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.8rem;
-            border-radius: 8px;
+            gap: 0.75rem;
+            padding: 1rem 2.2rem;
+            border-radius: 12px;
             font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
             font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .btn-primary {
-            background-color: var(--accent-color);
+        .btn-elite-primary {
             color: #ffffff;
-            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-pink));
         }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(59, 130, 246, 0.5);
+        .btn-elite-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(236, 72, 153, 0.35);
         }
 
-        .btn-secondary {
-            background-color: transparent;
+        .btn-elite-secondary {
             color: var(--text-main);
-            border: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-static);
         }
 
-        .btn-secondary:hover {
-            background-color: var(--bg-secondary);
-            border-color: var(--text-muted);
-            transform: translateY(-2px);
+        .btn-elite-secondary:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-3px);
         }
 
-        /* Content Container */
-        .section-container {
-            max-width: 1100px;
+        /* Section Global Styles */
+        .section-wrapper {
+            position: relative;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 6rem 2rem;
+            padding: 8rem 2rem;
+            z-index: 2;
         }
 
         .section-header {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             text-align: center;
         }
 
         .section-header h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 0.5rem;
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 0.8rem;
         }
 
         .section-header p {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
 
-        /* Skills Section */
+        /* Skills Grid */
         .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .skill-card {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            padding: 2rem;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .skill-icon {
-            font-size: 2rem;
-            color: var(--accent-color);
-            margin-bottom: 1.2rem;
-        }
-
-        .skill-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-badge {
-            background-color: var(--bg-tertiary);
-            color: var(--text-muted);
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        /* Projects Section */
-        .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
 
-        .project-card {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
+        .skill-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-static);
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(236, 72, 153, 0.3);
+            box-shadow: 0 20px 40px rgba(236, 72, 153, 0.08);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.8rem;
+        }
+
+        .skill-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+
+        .skill-tags {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-static);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
             transition: all 0.3s ease;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        .skill-card:hover .tag {
+            border-color: rgba(236, 72, 153, 0.2);
+            background: rgba(236, 72, 153, 0.03);
         }
 
-        .project-content {
-            padding: 2rem;
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-static);
+            border-radius: 24px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(15px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.08);
+        }
+
+        .project-body {
+            padding: 3rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
-        .project-tag {
-            color: var(--accent-color);
+        .proj-meta {
             font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            color: var(--accent-blue);
+            margin-bottom: 0.8rem;
         }
 
         .project-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         .project-card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            margin-bottom: 2rem;
             flex-grow: 1;
         }
 
-        .project-tech {
+        .project-tech-stack {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-badge {
-            background-color: rgba(255, 255, 255, 0.05);
-            color: var(--text-main);
-            font-size: 0.75rem;
-            padding: 0.25rem 0.6rem;
-            border-radius: 4px;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .project-link:hover {
-            color: var(--accent-color);
-        }
-
-        /* Footer / Contact */
-        footer {
-            background-color: var(--bg-secondary);
-            border-top: 1px solid var(--border-color);
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .footer-content h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-content p {
-            color: var(--text-muted);
             margin-bottom: 2rem;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
+        .tech-pill {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-static);
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
         }
 
-        .social-btn {
+        .project-btn {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background-color: var(--bg-tertiary);
+            gap: 0.6rem;
             color: var(--text-main);
-            border-radius: 50%;
             text-decoration: none;
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
         }
 
-        .social-btn:hover {
-            background-color: var(--accent-color);
-            color: #ffffff;
+        .project-btn i { transition: transform 0.3s ease; }
+        .project-card:hover .project-btn { color: var(--accent-blue); }
+        .project-card:hover .project-btn i { transform: translateX(5px); }
+
+        /* Footer */
+        footer {
+            background-color: rgba(2, 4, 10, 0.85);
+            backdrop-filter: blur(25px);
+            border-top: 1px solid var(--border-static);
+            padding: 6rem 2rem 4rem 2rem;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .footer-inner {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .footer-inner h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-inner p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Social Pill Row */
+        .social-row {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .social-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-static);
+            color: var(--text-main);
+            padding: 0.8rem 1.6rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .social-pill-linkedin {
+            background: rgba(59, 130, 246, 0.05);
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .social-pill-linkedin:hover {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: var(--accent-blue);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.15);
         }
 
-        .copyright {
+        .social-pill:hover {
+            background: rgba(236, 72, 153, 0.05);
+            border-color: rgba(236, 72, 153, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(236, 72, 153, 0.15);
+        }
+
+        .copyright-text {
             color: var(--text-muted);
             font-size: 0.85rem;
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* Keeps mobile layout minimalist and clean */
-            }
+            .nav-links { display: none; }
+            .section-wrapper { padding: 5rem 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav>
+    <!-- Living Color-Shifting Background Aurora -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+
+    <!-- Navigation -->
+    <header>
         <div class="nav-container">
             <a href="#" class="logo">Faizan<span>.</span></a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Specialization</a></li>
+                <li><a href="#projects">Showcase</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero" id="about">
         <div class="hero-content">
-            <div class="hero-tag">Available for Freelance & Projects</div>
-            <h1>Hi, I'm <span>Faizan Hussain</span></h1>
+            <div class="badge-interactive">
+                <span class="badge-dot"></span>
+                Designing Systems, Calculating Value
+            </div>
+            <h1>Blending <span>Creative Design</span> with <span>Financial Strategy</span></h1>
             <p class="hero-desc">
-                A passionate Web Developer, Graphic Designer, and Data Analyst specializing in building beautiful, secure web solutions, visually stunning content, and data-driven reports.
+                Hi, I'm Faizan Hussain. I architect sleek graphic brand assets, manage structured general ledgers, and build analytical business intelligence models.
             </p>
-            <div class="hero-btns">
-                <a href="#contact" class="btn btn-primary"><i class="fa-regular fa-envelope"></i> Let's Connect</a>
-                <a href="#projects" class="btn btn-secondary">See My Work</a>
+            <div class="hero-actions">
+                <a href="https://www.linkedin.com/in/faizan-novigas" class="btn-elite btn-elite-primary" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+                </a>
+                <a href="#projects" class="btn-elite btn-elite-secondary">Explore My Work</a>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="section-container" id="skills">
+    <!-- Specialization / Skills Stack -->
+    <section class="section-wrapper" id="skills">
         <div class="section-header">
-            <h2>Technical Skills</h2>
-            <p>Tools and technologies I use to build solutions</p>
+            <h2>Areas of Expertise</h2>
+            <p>The specialized skill sets I bring to projects</p>
         </div>
         <div class="skills-grid">
-            <!-- Skill Card 1 -->
-            <div class="skill-card">
-                <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
-                <h3>Web Development</h3>
-                <div class="skill-list">
-                    <span class="skill-badge">HTML5</span>
-                    <span class="skill-badge">CSS3</span>
-                    <span class="skill-badge">PHP</span>
-                    <span class="skill-badge">MySQL / SQL</span>
-                    <span class="skill-badge">GitHub</span>
-                </div>
-            </div>
-            <!-- Skill Card 2 -->
+            <!-- Pillar 1: Graphic Design -->
             <div class="skill-card">
                 <div class="skill-icon"><i class="fa-solid fa-palette"></i></div>
-                <h3>Creative Design</h3>
-                <div class="skill-list">
-                    <span class="skill-badge">Adobe Photoshop</span>
-                    <span class="skill-badge">Adobe After Effects</span>
-                    <span class="skill-badge">Graphic Design</span>
-                    <span class="skill-badge">Video Editing</span>
+                <h3>Graphic & Motion Design</h3>
+                <div class="skill-tags">
+                    <span class="tag">Adobe Photoshop</span>
+                    <span class="tag">Adobe After Effects</span>
+                    <span class="tag">Brand Identity</span>
+                    <span class="tag">Visual Asset Creation</span>
                 </div>
             </div>
-            <!-- Skill Card 3 -->
+            <!-- Pillar 2: Accounts -->
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fa-solid fa-calculator"></i></div>
+                <h3>Advanced Accounting</h3>
+                <div class="skill-tags">
+                    <span class="tag">General Ledgers</span>
+                    <span class="tag">Corporate Tendering</span>
+                    <span class="tag">Tax Filings</span>
+                    <span class="tag">Customs & Tariffs</span>
+                </div>
+            </div>
+            <!-- Pillar 3: Finance & Analytics -->
             <div class="skill-card">
                 <div class="skill-icon"><i class="fa-solid fa-chart-line"></i></div>
-                <h3>Analytics & Business</h3>
-                <div class="skill-list">
-                    <span class="skill-badge">Power BI</span>
-                    <span class="skill-badge">Advanced MS Excel</span>
-                    <span class="skill-badge">Business Analytics</span>
-                    <span class="skill-badge">Financial Ledgers</span>
+                <h3>Corporate Finance</h3>
+                <div class="skill-tags">
+                    <span class="tag">Power BI Dashboards</span>
+                    <span class="tag">Financial Modeling</span>
+                    <span class="tag">Advanced Excel Matrix</span>
+                    <span class="tag">Business Intelligence</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="section-container" id="projects">
+    <!-- Projects / Showcase -->
+    <section class="section-wrapper" id="projects">
         <div class="section-header">
             <h2>Featured Projects</h2>
-            <p>Some of the work I have developed and designed recently</p>
+            <p>Where mathematical structure meets creative execution</p>
         </div>
         <div class="projects-grid">
-            <!-- Project Card 1 -->
+            <!-- Project 1: Accounting Database -->
             <div class="project-card">
-                <div class="project-content">
-                    <div class="project-tag">Web & Database</div>
-                    <h3>Office Expense Tracker</h3>
-                    <p>A secure web-based application designed to log, track, and analyze multi-office receipts and travel expenses, integrated with a secure SQL database.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">HTML</span>
-                        <span class="tech-badge">PHP</span>
-                        <span class="tech-badge">SQL</span>
-                        <span class="tech-badge">CSS</span>
+                <div class="project-body">
+                    <div class="proj-meta">Accounting & Development</div>
+                    <h3>Multi-Branch Expense Tracker</h3>
+                    <p>Designed a secure, relational database application using PHP and SQL to log corporate ledgers, track multi-office receipts, and secure financial records.</p>
+                    <div class="project-tech-stack">
+                        <span class="tech-pill">PHP</span>
+                        <span class="tech-pill">SQL</span>
+                        <span class="tech-pill">Database Security</span>
                     </div>
-                    <a href="https://github.com/mr-faizan-00" class="project-link" target="_blank">View on GitHub <i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="https://github.com/mr-faizan-00" class="project-btn" target="_blank">
+                        Explore Code <i class="fa-solid fa-arrow-right-long"></i>
+                    </a>
                 </div>
             </div>
-            <!-- Project Card 2 -->
+            <!-- Project 2: Finance Analytics -->
             <div class="project-card">
-                <div class="project-content">
-                    <div class="project-tag">Data Analytics</div>
-                    <h3>Interactive Tournament Master Sheet</h3>
-                    <p>A comprehensive tracking and data visualization matrix built inside Microsoft Excel, featuring dynamic formulas, automated points tables, and colorful visual cues.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">Advanced Excel</span>
-                        <span class="tech-badge">Data Analysis</span>
-                        <span class="tech-badge">Dashboard Design</span>
+                <div class="project-body">
+                    <div class="proj-meta">Finance & Data Analytics</div>
+                    <h3>Interactive Performance Matrix</h3>
+                    <p>Engineered dynamic reporting dashboards using Power BI and Advanced Excel formulas to track performance metrics and manage financial calculations seamlessly.</p>
+                    <div class="project-tech-stack">
+                        <span class="tech-pill">Power BI</span>
+                        <span class="tech-pill">Excel Matrix</span>
+                        <span class="tech-pill">Data Analytics</span>
                     </div>
-                    <a href="https://github.com/mr-faizan-00" class="project-link" target="_blank">View on GitHub <i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="https://github.com/mr-faizan-00" class="project-btn" target="_blank">
+                        Explore Code <i class="fa-solid fa-arrow-right-long"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact & Footer Section -->
+    <!-- Contact -->
     <footer id="contact">
-        <div class="footer-content">
-            <h2>Let's Work Together</h2>
-            <p>I am always open to discussing new projects, creative design ideas, or data analytics opportunities.</p>
+        <div class="footer-inner">
+            <h2>Ready to work together?</h2>
+            <p>Let's collaborate on corporate ledgers, financial dashboards, brand graphics, or interactive database projects.</p>
             
-            <div class="social-links">
-                <!-- Replace "#" with your actual LinkedIn link if you want -->
-                <a href="#" class="social-btn" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://github.com/mr-faizan-00" class="social-btn" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="mailto:your-email@gmail.com" class="social-btn" title="Email"><i class="fa-regular fa-envelope"></i></a>
+            <div class="social-row">
+                <a href="https://www.linkedin.com/in/faizan-novigas" class="social-pill social-pill-linkedin" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+                </a>
+                <a href="https://github.com/mr-faizan-00" class="social-pill" target="_blank">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <a href="mailto:your-email@gmail.com" class="social-pill">
+                    <i class="fa-regular fa-envelope"></i> Email Me
+                </a>
             </div>
 
-            <p class="copyright">&copy; 2026 Faizan Hussain. All rights reserved.</p>
+            <p class="copyright-text">&copy; 2026 Faizan Hussain. All rights reserved.</p>
         </div>
     </footer>
 
