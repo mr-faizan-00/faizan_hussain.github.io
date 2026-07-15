@@ -5,56 +5,539 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faizan Hussain | Professional Portfolio</title>
     
-    <!-- SEO Meta Tags -->
+    <!-- SEO & Verification -->
     <meta name="description" content="Professional portfolio of Faizan Hussain. Discover my projects, skills, and professional experience.">
     <meta name="robots" content="index, follow">
-   <meta name="google-site-verification" content="gZbr3QNFWVmV3Km-BdsQu4q41MB1DWpp8upqv1JdTpc" />
+    <meta name="google-site-verification" content="gzbr3QNFWMv3Km-BdsQu4q41MB1DWpp8upqv1JdTpc" />
     <link rel="canonical" href="https://mr-faizan-00.github.io/faizan_hussain.github.io/">
 
-    <!-- Hidden Google Schema (Tells Google exactly who you are) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Faizan Hussain",
-      "url": "https://mr-faizan-00.github.io/faizan_hussain.github.io/",
-      "jobTitle": "Professional"
-    }
-    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 40px; background-color: #f4f6f9; color: #333; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        h1 { color: #111; margin-bottom: 5px; font-size: 2.5rem; }
-        .subtitle { color: #555; font-size: 1.2rem; margin-top: 0; font-weight: 400; }
-        .links { margin: 20px 0; }
-        .links a { margin-right: 20px; color: #0066cc; text-decoration: none; font-weight: bold; }
-        .links a:hover { text-decoration: underline; }
-        hr { border: 0; height: 1px; background: #e0e0e0; margin: 30px 0; }
-        h2 { color: #222; border-bottom: 2px solid #0066cc; padding-bottom: 5px; display: inline-block; }
+        :root {
+            --bg-primary: #0b0f19;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --accent-color: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --border-color: #374151;
+            --font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1.2rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem 2rem;
+            background: radial-gradient(circle at 90% 10%, var(--accent-glow) 0%, transparent 40%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: var(--accent-glow);
+            color: var(--accent-color);
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(to right, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(59, 130, 246, 0.5);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bg-secondary);
+            border-color: var(--text-muted);
+            transform: translateY(-2px);
+        }
+
+        /* Content Container */
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1.2rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-badge {
+            background-color: var(--bg-tertiary);
+            color: var(--text-muted);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .project-tag {
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-badge {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: var(--accent-color);
+        }
+
+        /* Footer / Contact */
+        footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-content p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: var(--bg-tertiary);
+            color: var(--text-main);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .social-btn:hover {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Keeps mobile layout minimalist and clean */
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Faizan Hussain</h1>
-        <p class="subtitle">Welcome to my Professional Profile</p>
-        
-        <div class="links">
-            <a href="#" target="_blank">LinkedIn</a>
-            <a href="https://github.com/mr-faizan-00" target="_blank">GitHub</a>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Faizan<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
+    </nav>
 
-        <hr>
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <div class="hero-tag">Available for Freelance & Projects</div>
+            <h1>Hi, I'm <span>Faizan Hussain</span></h1>
+            <p class="hero-desc">
+                A passionate Web Developer, Graphic Designer, and Data Analyst specializing in building beautiful, secure web solutions, visually stunning content, and data-driven reports.
+            </p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn btn-primary"><i class="fa-regular fa-envelope"></i> Let's Connect</a>
+                <a href="#projects" class="btn btn-secondary">See My Work</a>
+            </div>
+        </div>
+    </section>
 
-        <h2>About Me</h2>
-        <p>Hello! I am Faizan Hussain. This is my official professional profile page. I am building this space to showcase my work, highlight my skills, and connect with other professionals. Stay tuned for updates as I build out my projects!</p>
+    <!-- Skills Section -->
+    <section class="section-container" id="skills">
+        <div class="section-header">
+            <h2>Technical Skills</h2>
+            <p>Tools and technologies I use to build solutions</p>
+        </div>
+        <div class="skills-grid">
+            <!-- Skill Card 1 -->
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+                <h3>Web Development</h3>
+                <div class="skill-list">
+                    <span class="skill-badge">HTML5</span>
+                    <span class="skill-badge">CSS3</span>
+                    <span class="skill-badge">PHP</span>
+                    <span class="skill-badge">MySQL / SQL</span>
+                    <span class="skill-badge">GitHub</span>
+                </div>
+            </div>
+            <!-- Skill Card 2 -->
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fa-solid fa-palette"></i></div>
+                <h3>Creative Design</h3>
+                <div class="skill-list">
+                    <span class="skill-badge">Adobe Photoshop</span>
+                    <span class="skill-badge">Adobe After Effects</span>
+                    <span class="skill-badge">Graphic Design</span>
+                    <span class="skill-badge">Video Editing</span>
+                </div>
+            </div>
+            <!-- Skill Card 3 -->
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <h3>Analytics & Business</h3>
+                <div class="skill-list">
+                    <span class="skill-badge">Power BI</span>
+                    <span class="skill-badge">Advanced MS Excel</span>
+                    <span class="skill-badge">Business Analytics</span>
+                    <span class="skill-badge">Financial Ledgers</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h2>Projects & Experience</h2>
-        <ul>
-            <li><strong>Project Showcase:</strong> Coming soon! I am currently organizing my latest work to present here.</li>
-        </ul>
-    </div>
+    <!-- Projects Section -->
+    <section class="section-container" id="projects">
+        <div class="section-header">
+            <h2>Featured Projects</h2>
+            <p>Some of the work I have developed and designed recently</p>
+        </div>
+        <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-tag">Web & Database</div>
+                    <h3>Office Expense Tracker</h3>
+                    <p>A secure web-based application designed to log, track, and analyze multi-office receipts and travel expenses, integrated with a secure SQL database.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">PHP</span>
+                        <span class="tech-badge">SQL</span>
+                        <span class="tech-badge">CSS</span>
+                    </div>
+                    <a href="https://github.com/mr-faizan-00" class="project-link" target="_blank">View on GitHub <i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+            <!-- Project Card 2 -->
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-tag">Data Analytics</div>
+                    <h3>Interactive Tournament Master Sheet</h3>
+                    <p>A comprehensive tracking and data visualization matrix built inside Microsoft Excel, featuring dynamic formulas, automated points tables, and colorful visual cues.</p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Advanced Excel</span>
+                        <span class="tech-badge">Data Analysis</span>
+                        <span class="tech-badge">Dashboard Design</span>
+                    </div>
+                    <a href="https://github.com/mr-faizan-00" class="project-link" target="_blank">View on GitHub <i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer Section -->
+    <footer id="contact">
+        <div class="footer-content">
+            <h2>Let's Work Together</h2>
+            <p>I am always open to discussing new projects, creative design ideas, or data analytics opportunities.</p>
+            
+            <div class="social-links">
+                <!-- Replace "#" with your actual LinkedIn link if you want -->
+                <a href="#" class="social-btn" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/mr-faizan-00" class="social-btn" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:your-email@gmail.com" class="social-btn" title="Email"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+
+            <p class="copyright">&copy; 2026 Faizan Hussain. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
